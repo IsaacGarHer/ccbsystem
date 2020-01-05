@@ -1,0 +1,64 @@
+@import '../../../global/variables.scss';
+
+.check-box-group{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  .check-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .input-check{
+      width: 15px;
+      height: 15px;
+      border: 1px solid $gray;
+      position: relative;
+      &::after{
+        position: absolute;
+        top: 3px;
+        left: 1.5px;
+        content: '';
+        width: 9px;
+        height: 3px;
+        border-width: 0 0 3px 3px;
+        border-color: $white;
+        border-style: solid;
+        transform: rotate(-45deg);
+      }
+      &.this-active{
+        background: $primary;
+        animation: circle-box 0.1s;
+        @keyframes circle-box {
+          @for $i from 0% to 100% {
+            #{$i}{
+              background-image: radial-gradient(circle at center, $primary $i, $white $i);
+            }
+          }
+        }
+      }
+      &.didnt-active{
+        background: $white;
+        animation: not-circle-box 0.1s;
+        @keyframes not-circle-box {
+          @for $i from 0% to 100% {
+            #{$i}{
+              background-image: radial-gradient(circle at center, $primary calc(100% - #{$i}), $white calc(100% - #{$i}));
+            }
+          }
+        }
+      }
+    }
+    .check-text{
+      margin-left: 5px;
+      transition: 0.1s;
+      &.text-active{
+        color: $black;
+      }
+      &.text-dont-active{
+        color: $gray;
+      }
+    }
+  }
+}
