@@ -1,6 +1,8 @@
 import React from 'react'
 import './index.scss'
 
+import SubtitleTwo from '../subtitle-two/'
+
 export default props => (
   <div
     className = 'calendar' >
