@@ -1,0 +1,17 @@
+@import '../../../global/variables.scss';
+
+.input-text {
+  color: $black;
+  border-width: 0 0 1px 0;
+  border-color: $gray;
+  border-style: solid;
+  font-size: 1.2em;
+  background: transparent;
+  &::placeholder{
+    color: $gray;
+  }
+  &:focus{
+    outline: none;
+    border-color: $black;
+  }
+}

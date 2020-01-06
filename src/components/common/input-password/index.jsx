@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.scss'
 
-import NotVisiblePassword from '../../../resources/icons/not-visible-button'
-import VisiblePassword from '../../../resources/icons/visible-button'
+import NotVisiblePassword from '../../../resources/icons/not-visiblility-button.svg'
+import VisiblePassword from '../../../resources/icons/visibility-button.svg'
 
 export default props => (
   <div className = "input-password-contain">
