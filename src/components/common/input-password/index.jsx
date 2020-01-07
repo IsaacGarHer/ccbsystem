@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.scss'
 
-import NotVisiblePassword from '../../../resources/icons/not-visiblility-button.svg'
-import VisiblePassword from '../../../resources/icons/visibility-button.svg'
+import notVisiblePassword from '../../../resources/icons/not-visiblility-button.svg'
+import visiblePassword from '../../../resources/icons/visibility-button.svg'
 
 export default props => (
   <div className = "input-password-contain">
@@ -15,9 +15,9 @@ export default props => (
       placeholder = { props.placeholder ? props.placeholder : '' }
       onChange = { ( e ) => props.functionChange( e ) ? props.functionChange( e ) : null } />
     <img
-      src = { props.seexPassword ? NotVisiblePassword : VisiblePassword }
+      src = { props.seexPassword ? notVisiblePassword : visiblePassword }
       alt = { props.seePassword ? 'Ocultar' : 'Ver' }
-      onClick = { props.changeVisibility ? props.changeVisibility : null }
+      onClick = { ( ) => props.changeVisibility ? props.changeVisibility : null }
       className = 'eye' />
   </div>
 )

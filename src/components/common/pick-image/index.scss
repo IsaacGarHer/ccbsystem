@@ -1,0 +1,22 @@
+@import '../../../global/variables.scss';
+
+.pick-image{
+  display: block;
+  position: relative;
+  .input-image{
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    opacity: 0;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+  }
+  .image-profile{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
