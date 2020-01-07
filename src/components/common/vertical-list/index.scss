@@ -1,0 +1,19 @@
+@import '../../../global/variables.scss';
+
+.vertical-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .options-in-vertical {
+    margin: 2.5px 0;
+    color: $gray;
+    font-size: 1em;
+    &:hover {
+      color: $black;
+    }
+  }
+}
