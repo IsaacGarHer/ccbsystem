@@ -1,0 +1,61 @@
+@import '../../../global/variables.scss';
+
+.select{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+  width: fit-content;
+  z-index: 10000;
+  .text-of-selection{
+    width: 15vw;
+    font-size: 1.2em;
+    &.text-empty{
+      color: $gray;
+    }
+    &.text-not-empty{
+      color: $black;
+    }
+  }
+  .action-button{
+    height: 3vh;
+    margin-left: -3vh;
+    transition: 0.3s;
+    &.open-button{
+      transform: rotate(0deg);
+    }
+    &.close-button{
+      transform: rotate(180deg);
+    }
+  }
+  .options-select{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 0.25px solid $gray;
+    width: 100%;
+    transition: 0.3s;
+    background: $white;
+    &.see-options{
+      left: 0;
+      top: calc(100% + 5px);
+      opacity: 1;
+      visibility: visible;
+    }
+    &.not-see-options{
+      left: 0;
+      top: 95%;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .options-to-select{
+      font-size: 1em;
+      padding: 2.5px 5%;
+      width: 90%;
+      border: 0.25px solid $gray;
+    }
+}
+}
