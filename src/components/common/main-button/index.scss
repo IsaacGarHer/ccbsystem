@@ -1,0 +1,15 @@
+@import '../../../global/variables.scss';
+
+.main-button{
+  background: $primary;
+  color: $white;
+  font-size: 1.2em;
+  border: 1px solid $primary;
+  transition: 0.1s;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    background: $primary-dark;
+  }
+}
