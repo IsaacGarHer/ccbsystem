@@ -1,0 +1,11 @@
+@import '../../../global/variables.scss';
+
+.window-link{
+  font-size: 1em;
+  color: $primary;
+  font-style: italic;
+  text-decoration: none;
+  &:hover, &:focus, &:active{
+    color: $primary;
+  }
+}
