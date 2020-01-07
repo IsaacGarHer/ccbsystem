@@ -1,0 +1,57 @@
+@import '../../../global/variables.scss';
+
+.more-options-menu{
+  z-index: 1000;
+  position: absolute;
+  right: 4%;
+  top: 2%;
+  width: 140px;
+  background-color: $white;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: $gray;
+  &.hidden{
+    visibility: hidden;
+    animation: hiddenMenu 0.15s;
+    @keyframes hiddenMenu {
+      0%{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        visibility: visible;
+      } 100% {
+        clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0%);
+        visibility: visible;
+      }
+    }
+  }
+  &.visible{
+    visibility: visible;
+    animation: visibleMenu 0.15s;
+    @keyframes visibleMenu {
+      0%{
+        clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0%);
+        visibility: visible;
+      } 100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        visibility: visible;
+      }
+    }
+  }
+  .group-options{
+    width: 100%;
+    padding: 3px 0;
+    border-bottom: 1px solid $gray;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .option{
+      font-weight: 100;
+      font-size: 1em;
+      width: calc(100% - 6px);
+      padding: 1px 3px;
+      &:hover{
+        background: $gray;
+      }
+    }
+  }
+}
