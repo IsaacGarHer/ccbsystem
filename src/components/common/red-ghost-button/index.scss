@@ -1,0 +1,19 @@
+@import '../../../global/variables.scss';
+
+.red-ghost-button {
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $primary;
+  color: $primary;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  transition: 100ms;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    background: $primary;
+    color: $white;
+  }
+}
