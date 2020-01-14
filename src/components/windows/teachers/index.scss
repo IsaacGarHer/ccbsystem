@@ -1,0 +1,53 @@
+@import '../../../global/variables.scss';
+
+.teachers{
+  width: 90vw;
+  height: 80vh;
+  padding: 5vh 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .teachers-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+    .selects-container{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .subtitle-one{
+        &:nth-child(1){
+          margin: 0 10px 0 0;
+        }
+        &:nth-child(3){
+          margin: 0 10px 0 5vw;
+        }
+      }
+    }
+  }
+  .teachers-main{
+    height: calc(100% - 25px);
+    width: calc(100% - 20px);
+    padding: 0 20px 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    border-right: 1px solid $gray;
+    &::-webkit-scrollbar{
+      width: 10px;
+      background: $white;
+    }
+    &::-webkit-scrollbar-thumb{
+      background: $gray;
+      border-right: 1px solid $white;
+    }
+    .card{
+      flex: 1;
+    }
+  }
+}
