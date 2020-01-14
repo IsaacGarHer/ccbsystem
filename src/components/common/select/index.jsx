@@ -9,7 +9,7 @@ export default props => (
     <span
       className = {`text-of-selection ${ props.select === null ? 'text-empty' : 'text-not-empty' }`}>{ props.select ? props.select : props.placeholder ? props.placeholder : '' }</span>
     <img 
-      onClick = { ( ) => props.changeShow ? props.changeShow : null }
+      onClick = { ( ) => props.changeShow ? props.changeShow( ) : null }
       src = { bottomArrow } 
       alt = 'abrir'
       className = { `action-button ${ props.showList ? 'close-button' : 'open-button' }` }/>

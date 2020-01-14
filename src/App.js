@@ -8,6 +8,7 @@ import Home from './components/windows/home/'
 import Login from './components/windows/authentication/login/'
 import Register from './components/windows/authentication/register/'
 import Events from './components/windows/events/'
+import Students from './components/windows/students/'
 
 export default ( ) => (
   <Fragment>
@@ -17,6 +18,7 @@ export default ( ) => (
       <Route exatc path = { ROUTES.LOGIN } component = { Login } />
       <Route exatc path = { ROUTES.REGISTER } component = { Register } />
       <Route exatc path = { ROUTES.EVENTS } component = { Events } />
+      <Route exatc path = { ROUTES.STUDENTS } component = { Students } />
     </Switch>
   </Fragment>
 )
