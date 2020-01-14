@@ -1,0 +1,82 @@
+@import '../../../global/variables.scss';
+
+.events {
+  width: 90vw;
+  height: 60vh;
+  padding: 5vh 5% 25vh 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .left-arrow-calendar {
+    position: absolute;
+    height: 6vh;
+    top: 42vh;
+    left: 1vw;
+  }
+  .right-arrow-calendar {
+    position: absolute;
+    height: 6vh;
+    top: 42vh;
+    right: 1vw;
+    transform: rotate(180deg);
+  }
+  .bottom-arrow{
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    bottom: 16vh;
+    height: 5vh;
+    &.view-all {
+      transform: rotate(180deg);
+    }
+    &.hidden-all {
+      transform: rotate(0deg);
+    }
+  }
+  #bottom-text {
+    position: absolute;
+    bottom: 8vh;
+  }
+  .events-list {
+    transition: 0.3s ease-in-out;
+    background-color: $white;
+    position: absolute;
+    width: 90vw;
+    padding: 0 5vw;
+    left: 0;
+    &::-webkit-scrollbar{
+      width: 10px;
+      background-color: $white;
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: $gray;
+      border-right: 1px solid $white;
+    }
+    &.all-screen {
+      top: 15vh;
+      height: 60vh;
+      max-height: 60vh;
+      overflow-y: scroll;
+    }
+    &.in-bottom {
+      top: 85%;
+    }
+    .events-ccb {
+      margin-bottom: 10px;
+      height: 13vh;
+      width: 95%;
+      padding: 1vh 2.5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $gray;
+      box-shadow: 1px 1px 3px 0 $gray;
+      .large-text {
+        width: 60%;
+      }
+      .data-event, .bottom-part {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
