@@ -1,0 +1,139 @@
+@import '../../../global/variables.scss';
+
+.header{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black;
+  div{
+    width: 95vw;
+    height: 100%;
+    &.false{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        width: 7vh;
+        height: 7vh;
+        min-height: 7vh;
+        min-width: 7vh;
+      }
+    }
+    &.true{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        &[alt='perfil']{
+          min-width: 7vh;
+          min-height: 7vh;
+          width: 7vh;
+          height: 7vh;
+        }
+      }
+      .nav-bar{
+        height: 100%;
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .input-container{
+          width: fit-content;
+          height: 6vh;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+          &.search-active{
+            background: $white;
+            animation: see 0.15s;
+            @keyframes see {
+              @for $i from 0% to 100% {
+                #{$i}{
+                  background-image: radial-gradient(circle at calc(100% - 20px - 2vh) 50%, $white $i, $black $i);
+                }
+              }
+            }
+          }
+          &.not-search-active{
+            animation: notSee 0.15s;
+            @keyframes notSee {
+              @for $i from 0% to 100% {
+                #{$i}{
+                  background-image: radial-gradient(circle at calc(100% - 20px - 2vh) 50%, $white calc(100% - #{$i}), $black calc(100% - #{$i}));
+                }
+              }
+            }
+          }
+          input{
+            transition: 0.15s;
+            &.input-text{
+              width: 30vw;
+              pointer-events: none;
+              visibility: hidden;
+              &#didnt-see-mis{
+                animation: didntvisibleInput 0.15s;
+                @keyframes didntvisibleInput {
+                  0% {
+                    opacity: 1;
+                  } 100% {
+                    opacity: 0;
+                  }
+                }
+              }
+            }
+            &#main-input-search{
+              pointer-events: all;
+              visibility: visible;
+              animation: visibleInput 0.15s;
+              @keyframes visibleInput {
+                0% {
+                  opacity: 0;
+                } 100% {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          img{
+            width: 3vh;
+            height: 3vh;
+            margin-left: -3vh;
+          }
+        }
+        .options-list{
+          width: fit-content;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+          .link{
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li{
+              padding: 0 15px;
+              width: 100%;
+              height: 10vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.1em;
+              color: $white;
+              transition: 100ms;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
