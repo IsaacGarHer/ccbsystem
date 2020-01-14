@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 
-import notVisiblePassword from '../../../resources/icons/not-visiblility-button.svg'
+import notVisiblePassword from '../../../resources/icons/not-visibility-button.svg'
 import visiblePassword from '../../../resources/icons/visibility-button.svg'
 
 export default props => (

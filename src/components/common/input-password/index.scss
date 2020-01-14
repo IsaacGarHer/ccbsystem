@@ -1,0 +1,30 @@
+@import '../../../global/variables.scss';
+
+.input-password-contain{
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .input-password {
+    color: $black;
+    border-width: 0 0 1px 0;
+    border-color: $gray;
+    border-style: solid;
+    font-size: 1.2em;
+    background: transparent;
+    &::placeholder{
+      color: $gray;
+    }
+    &:focus{
+        outline: none;
+      border-color: $black;
+    }
+  }
+  .eye{
+    width: 4vh;
+    height: 4vh;
+    margin-left: -4vh;
+  }
+}

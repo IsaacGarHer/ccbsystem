@@ -1,0 +1,150 @@
+@import '../../../../global/variables.scss';
+
+.login{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    width: 50vw;
+    height: 60vh;
+    border: 1px solid $gray;
+    box-shadow: 5px 5px 6px 0px $gray;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .back-button-login{
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 25px;
+      transition: 1s;
+      &.see-back-button{
+        opacity: 1;
+      }
+      &.not-see-back-button{
+        opacity: 0;
+      }
+    }
+    .user-container, .password-container{
+      width: 70%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      .image-profile{
+        width: 20vh;
+        height: 20vh;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      .input-password-contain{
+        width: 100%;
+      }
+      input{
+        width: 100%;
+      }
+    }
+    .user-container {
+      &.user-hidden{
+        position: absolute;
+        right: 100%;
+        top: 10%;
+        opacity: 0;
+        animation: hide-user 1s;
+        @keyframes hide-user {
+          0% {
+            position: absolute;
+            right: 15%;
+            top: 10%;
+            opacity: 1;
+          } 100%{
+            position: absolute;
+            right: 100%;
+            top: 10%;
+            opacity: 0;
+          }
+        }
+      }
+      &.user-visible{
+        position: static;
+        opacity: 1;
+        animation: show-user 1s;
+        @keyframes show-user {
+          0% {
+            position: absolute;
+            right: 100%;
+            top: 10%;
+            opacity: 0;
+          } 100%{
+            position: absolute;
+            right: 15%;
+            top: 10%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .password-container{
+      &.pass-hidden{
+        position: absolute;
+        left: 100%;
+        top: 10%;
+        animation: hide-pass 1s;
+        opacity: 0;
+        @keyframes hide-pass {
+          0% {
+            position: absolute;
+            left: 15%;
+            top: 10%;
+            opacity: 1;
+          } 100%{
+            position: absolute;
+            left: 100%;
+            top: 10%;
+            opacity: 0;
+          }
+        }
+      }
+      &.pass-visible{
+        position: static;
+        animation: show-pass 1s;
+        opacity: 1;
+        @keyframes show-pass {
+          0% {
+            position: absolute;
+            left: 100%;
+            top: 10%;
+            opacity: 0;
+          } 100%{
+            position: absolute;
+            left: 15%;
+            top: 10%;
+            opacity: 1;
+          }
+        }
+      }
+      .pass-contain-option{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        .check-box-group{
+          position: absolute;
+          top: calc(100% + 10px);
+          left: 0%;
+        }
+      }
+      .bottom-login-part{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+}

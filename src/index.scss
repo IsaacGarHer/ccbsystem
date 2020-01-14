@@ -1,0 +1,46 @@
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Thin.ttf');
+  font-weight: 100;
+}
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Light.ttf');
+  font-weight: 300;
+}
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+}
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Medium.ttf');
+  font-weight: 500;
+}
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+@font-face{
+  font-family: RobotoCC;
+  src: url('./resources/fonts/Roboto-Black.ttf');
+  font-weight: 900;
+}
+
+body {
+  margin: 0;
+  font-family: 'RobotoCC', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  input, button{
+    font-family: 'RobotoCC', 'Arial', sans-serif;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
