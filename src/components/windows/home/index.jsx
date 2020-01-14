@@ -96,6 +96,7 @@ class HomePreview extends Component {
   }
 
   render( ){
+    const st = this.state
     return(
       <div
         className = 'home' >
@@ -111,9 +112,9 @@ class HomePreview extends Component {
           </div>
           <div
             className = 'workshops-list-container'>
-            { this.state.workshops.length > 0 ?
+            { st.workshops.length > 0 ?
               <VerticalList
-                  options = { this.state.workshops }/>
+                  options = { st.workshops }/>
               :
               <img
                 src = { empty }
@@ -127,8 +128,8 @@ class HomePreview extends Component {
             text = 'Actividad Reciente'/>
           <div
             className = 'notify-list-container'>
-            { this.state.notifys.length > 0 ?
-              this.state.notifys.map( ntf => (
+            { st.notifys.length > 0 ?
+              st.notifys.map( ntf => (
                   this.notifysHome( ntf )
               ))
               :

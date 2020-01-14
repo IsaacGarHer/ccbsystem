@@ -123,6 +123,7 @@ class LoginPreview extends Component {
   changePassword = e => this.setState({ password: e.target.value })
 
   render( ) {
+    const st = this.state
     return(
       <div
         className = 'login'>
@@ -132,9 +133,9 @@ class LoginPreview extends Component {
             onClick = { ( ) => this.backFisrtStep( ) }
             src = { leftArrow }
             alt = 'atras'
-            className = { `back-button-login ${ this.state.next_step ? 'see-back-button' : 'not-see-back-button' }` } />
+            className = { `back-button-login ${ st.next_step ? 'see-back-button' : 'not-see-back-button' }` } />
           <div
-            className = {`user-container ${ this.state.next_step ? 'user-hidden' : 'user-visible' }` } >
+            className = {`user-container ${ st.next_step ? 'user-hidden' : 'user-visible' }` } >
             <img
               src = { user }
               alt = 'usuario'
@@ -142,15 +143,15 @@ class LoginPreview extends Component {
             <InputText
               placeholder = 'Correo'
               functionChange = { this.changeEmail }
-              value = { this.state.email } />
+              value = { st.email } />
             <MainButton
               text = 'Siguiente'
               function = { this.theNextStep }/>
           </div>
           <div
-            className = { `password-container ${ this.state.next_step ? 'pass-visible' : 'pass-hidden' }` } >
+            className = { `password-container ${ st.next_step ? 'pass-visible' : 'pass-hidden' }` } >
             <img
-              src = { this.state.imageProfile != null ? this.state.imageProfile : user }
+              src = { st.imageProfile != null ? st.imageProfile : user }
               alt = 'usuario'
               className = 'image-profile' />
             <div
@@ -158,11 +159,11 @@ class LoginPreview extends Component {
               <InputPassword
                 placeholder = 'Contraseña'
                 changeVisibility = { this.changeVisibility }
-                seePassword = { this.state.seePassword }
+                seePassword = { st.seePassword }
                 functionChange = { this.changePassword }
-                value = { this.state.password } />
+                value = { st.password } />
               <CheckBox 
-                options = { this.state.checkgroup }
+                options = { st.checkgroup }
                 check = { this.check } />
             </div>
               <div
