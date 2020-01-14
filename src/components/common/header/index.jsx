@@ -36,9 +36,9 @@ export default class Header extends Component {
         <div
           className = 'true'>
           <NavLink
-            to = { ROUTES.MY_PROFILE }
+            to = { ROUTES.USER_PROFILE }
             className = 'link'
-            onClick = { ( ) => this.changePath( ROUTES.MY_PROFILE ) } >
+            onClick = { ( ) => this.changePath( ROUTES.USER_PROFILE ) } >
             <img
               src = { ls.imageProfile ? ls.imageProfile : theater }
               alt = 'perfil' />
@@ -103,7 +103,7 @@ export default class Header extends Component {
             direction = { st.path === ROUTES.LOGIN ? ROUTES.REGISTER : st.path === ROUTES.REGISTER ? ROUTES.LOGIN : ROUTES.HOME }
             component = {
               <GhostButton
-                text = { st.path === ROUTES.LOGIN ? 'Registrate' : st.path === ROUTES.REGISTER ? 'Entra' : '' }
+                text = { st.path === ROUTES.LOGIN ? 'Registrate' : st.path === ROUTES.REGISTER ? 'Entra' : 'Home' }
                 function = { ( ) => this.changePath( st.path === ROUTES.LOGIN ? ROUTES.REGISTER : st.path === ROUTES.REGISTER ? ROUTES.LOGIN : ROUTES.HOME ) }/>
             }/>
         </div>
