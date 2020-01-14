@@ -1,0 +1,54 @@
+@import '../../../../global/variables.scss';
+
+.register{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container{
+    width: 50vw;
+    height: 70vh;
+    border: 1px solid $gray;
+    box-shadow: 5px 5px 6px 0px $gray;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    .container-padding{
+      width: 70%;
+      height: 80%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      .pick-image{
+        margin: 0 auto;
+      }
+      .first-part-register{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        input{
+          width: calc(100% - 20vw);
+        }
+      }
+      input{
+        width: 100%;
+      }
+      .input-password-contain{
+        width: 100%;
+      }
+      .last-part-register{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #code-input{
+          width: calc(100% - 20vw)
+        }
+      }
+    }
+  }
+}
