@@ -1,0 +1,127 @@
+@import '../../../global/variables.scss';
+
+.notification{
+  width: 25vw;
+  height: 10vh;
+  display: flex;
+  padding: 2.5vh 2.5vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 3px 3px 5px 0 #4448;
+  &.bad{
+    background-color: $bad-color;
+  }
+  &.good{
+    background-color: $good-color;
+  }
+  &.see-ntf{
+    right: 5vw;
+    top: 5vh;
+    animation: enterhook 0.3s;
+    @keyframes enterhook {
+      @for $i from 0% to 80% {
+        #{$i} {
+          right: calc(-50vw + (#{$i} / 4 * 3));
+        }
+      } @for $i from 81% to 91% {
+        #{$i} {
+          right: calc(10% - (#{$i} - 80%));
+        }
+      } @for $i from 91% to 100% {
+        #{$i} {
+          right: calc(0% + ((#{$i} - 91%) / 2));
+        }
+      }
+    }
+  }
+  &.didnt-see-ntf{
+    right: -50vw;
+    top: 5vh;
+    animation: exithook 0.3s;
+    @keyframes exithook {
+      0% {
+        right: 5vw;
+      } 100% {
+        right: -50vw;
+      }
+    }
+  }
+  .decoration{
+    height: 100%;
+    width: 1.5vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &.goodD{
+      background-color: $good-dark-color;
+    }
+    &.badD{
+      background-color: $bad-dark-color;
+    }
+  }
+  .timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 5vw;
+    height: 10vh;
+    .circle-bar-progress {
+      width: 8vh;
+      height: 8vh;
+      border-width: 7px;
+      border-color: $white;
+      border-style: solid;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - (4vh + 7px));
+      left: calc(50% - (4vh + 7px));
+      &.active-progress{
+        clip-path: polygon(50% 0, 50% 0, 50% 50%);
+        animation: time 2s;
+        @keyframes time {
+          @for $i from 0% to 12.5% {
+            #{$i} {
+              clip-path: polygon(50% 50%, 50% 0, 0 0, 0 100%, 100% 100%, 100% 0, calc(50% + #{$i} * 4) 0);
+            }
+          }
+          @for $i from 13.5% to 37.5%{
+            #{$i} {
+              clip-path: polygon(50% 50%, 50% 0, 0 0, 0 100%, 100% 100%, 100% calc((#{$i} - 13.5%) * 4));
+            }
+          }
+          @for $i from 38.5% to 62.5%{
+            #{$i} {
+              clip-path: polygon(50% 50%, 50% 0, 0 0, 0 100%, calc(100% - ((#{$i} - 38.5%) * 4)) 100%);
+            }
+          }
+          @for $i from 63.5% to 87.5%{
+            #{$i} {
+              clip-path: polygon(50% 50%, 50% 0, 0 0, 0 calc(100% - ((#{$i} - 63.5%) * 4)));
+            }
+          }
+          @for $i from 88.5% to 100%{
+            #{$i} {
+              clip-path: polygon(50% 50%, 50% 0, calc((#{$i} - 88.5%) * 4) 0);
+            }
+          }
+        }
+      }
+      &.not-active{
+        clip-path: polygon(50% 0, 50% 0, 50% 50%);
+      }
+    }
+    .img-ntf{
+      height: 4vh;
+    }
+  }
+  .text-advice{
+    margin-left: 20px;
+    font-size: 1.4em;
+    font-family: 'Arial';
+    color: $white;
+    height: 100%;
+  }
+}
