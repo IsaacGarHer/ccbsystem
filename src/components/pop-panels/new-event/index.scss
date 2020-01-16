@@ -1,0 +1,67 @@
+@import '../../../global/variables.scss';
+
+.new-event{
+  .workshops{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+    &.active{
+      visibility: visible;
+      opacity: 1;
+    }
+    &.hide{
+      visibility: hidden;
+      opacity: 0;
+    }
+    .close-workshops{
+      position: absolute;
+      width: 90px;
+      height: 20px;
+      padding: 5px 0;
+      right: 25vw;
+      bottom: 90vh; 
+      background-color: $primary;
+    }
+    .view{
+      position: absolute;
+      top: 10vh;
+      left: 25vw;
+      background-color: $white;
+      width: 40vw;
+      padding: 5vh 5vw;
+      height: 70vh;
+      z-index: 10;
+      overflow-x: hidden;
+      overflow-y: visible;
+      flex-wrap: wrap;
+      display: grid;
+      display: flex;
+      flex-wrap: wrap;
+      &::-webkit-scrollbar{
+        width: 10px;
+        background-color: $white;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: $gray;
+        border-right: 1px solid $white;
+      }
+      .check-box-group{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .check-box{
+          width: calc(100% / 5);
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}
