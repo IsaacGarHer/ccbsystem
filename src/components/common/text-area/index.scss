@@ -1,0 +1,16 @@
+@import '../../../global/variables.scss';
+
+.text-area{
+  height: 15vh;
+  width: 25vw;
+  border: 1px solid $gray;
+  resize: none;
+  font-size: 1.2em;
+  &::placeholder{
+    color: $gray;
+  }
+  &:focus{
+    outline: none;
+    border-color: $black;
+  }
+}

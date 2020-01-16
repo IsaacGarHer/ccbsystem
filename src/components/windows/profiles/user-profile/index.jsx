@@ -10,8 +10,9 @@ import InputText from '../../../common/input-text/'
 import InputPassword from '../../../common/input-password/'
 import SubtitleTwo from '../../../common/subtitle-two/'
 import MainButton from '../../../common/main-button/'
-import RadioButtons from '../../../common/radio-buttons'
-import AddStudent from '../../../pop-panels/add-student'
+import RadioButtons from '../../../common/radio-buttons/'
+import AddStudent from '../../../pop-panels/add-student/'
+import NewEvent from '../../../pop-panels/new-event/'
 
 class UserProfilePreview extends Component {
   constructor( props ) {
@@ -101,7 +102,10 @@ class UserProfilePreview extends Component {
             { st.work === 'student' ?
               <AddStudent />
               :
-              null }
+              st.work === 'event' ?
+              <NewEvent />
+              :
+              null}
           </div>
         </div>
       </div>
