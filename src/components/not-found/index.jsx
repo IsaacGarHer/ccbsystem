@@ -11,6 +11,7 @@ export default props => (
     <img
       src = { error }
       alt = 'no se encontro' />
-
+      <Title
+        text = { 'La pagina solicitada no se encontro' }/>
   </div>
 )
