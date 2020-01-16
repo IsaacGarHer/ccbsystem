@@ -5,4 +5,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 90vh;
+  .nf-icon {
+    width: 15vw;
+  }
+  .title {
+    margin-top: 5vh;
+  }
 }

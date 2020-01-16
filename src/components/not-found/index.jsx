@@ -10,8 +10,9 @@ export default props => (
     className = 'not-found'>
     <img
       src = { error }
-      alt = 'no se encontro' />
-      <Title
-        text = { 'La pagina solicitada no se encontro' }/>
+      alt = 'no se encontro'
+      className = { 'nf-icon' } />
+    <Title
+      text = { 'La pagina solicitada no se encontro' }/>
   </div>
 )
