@@ -1,0 +1,49 @@
+@import '../../../global/variables.scss';
+
+.radio-buttons-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  .radio-option{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 10px;
+    .circle{
+      width: 20px;
+      height: 20px;
+      position: relative;
+      border-radius: 50%;
+      transition: 0.15s ease-in-out;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        transition: 0.15s ease-in-out;
+      }
+      &.active{
+        border: 2px solid $primary;
+        &::before {
+          background-color: $primary;
+        }
+      }
+      &.hide{
+        border: 2px solid $gray;
+        &::before {
+          background-color: $white;
+        }
+      }
+    }
+    .radio-text{
+      font-size: 1.1em;
+      font-weight: 300;
+      margin-left: 5px;
+    }
+  }
+}
