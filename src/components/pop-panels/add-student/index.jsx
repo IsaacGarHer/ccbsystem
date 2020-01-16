@@ -56,6 +56,16 @@ class AddStudentPreview extends Component {
     this.setState({ pays })
   }
 
+  onImageChange = event => {
+    if ( event.target.files && event.target.files[0] ){
+      let reader = new FileReader( )
+      reader.onload = e => {
+        this.setState({ image_profile: e.target.result })
+      }
+      reader.readAsDataURL( event.target.files[0] )
+    }
+  }
+
   checkMonth = i => this.setState( st => {
     let pays = Object.assign({}, st.pays)
     pays.month[i].active = !pays.month[i].active
@@ -99,15 +109,16 @@ class AddStudentPreview extends Component {
             placeholder = 'Dirección'
             value = { st.home }
             functionChange = { this.changeHome }/>
-        </div>
-        <div
-          className = 'second'>
-          <PickIamge
-            />
           <InputNumber
             placeholder = 'Telefono'
             value = { st.phone }
             functionChange = { this.changePhone }/>
+        </div>
+        <div
+          className = 'second'>
+          <PickIamge
+            imageProfile = { st.image_profile }
+            onImageChange = { this.onImageChange }/>
         </div>
         <div
           className = 'third'>
@@ -124,11 +135,14 @@ class AddStudentPreview extends Component {
         </div>
         <div
           className = 'fourth'>
-          <RedGhostButton
-            text = 'Ver Meses'
-            click = { this.viewMonths }/>
-          <RedGhostButton
-            text = 'Ver Talleres'/>
+          <div
+            className = 'red-gb'>
+            <RedGhostButton
+              text = 'Ver Meses'
+              click = { this.viewMonths }/>
+            <RedGhostButton
+              text = 'Ver Talleres'/>
+          </div>
           <MainButton
             text = 'Guardar'/>
         </div>
