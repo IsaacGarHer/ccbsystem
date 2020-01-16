@@ -10,17 +10,19 @@ import Register from './components/windows/authentication/register/'
 import Events from './components/windows/events/'
 import Students from './components/windows/students/'
 import Teachers from './components/windows/teachers/'
+import UserProfile from './components/windows/profiles/user-profile/'
 
 export default ( ) => (
   <Fragment>
     <Header />
     <Switch>
       <Route exact path = { ROUTES.HOME } component = { Home } />
-      <Route exatc path = { ROUTES.LOGIN } component = { Login } />
-      <Route exatc path = { ROUTES.REGISTER } component = { Register } />
-      <Route exatc path = { ROUTES.EVENTS } component = { Events } />
-      <Route exatc path = { ROUTES.STUDENTS } component = { Students } />
-      <Route exatc path = { ROUTES.TEACHERS } component = { Teachers } />
+      <Route exact path = { ROUTES.LOGIN } component = { Login } />
+      <Route exact path = { ROUTES.REGISTER } component = { Register } />
+      <Route exact path = { ROUTES.EVENTS } component = { Events } />
+      <Route exact path = { ROUTES.STUDENTS } component = { Students } />
+      <Route exact path = { ROUTES.TEACHERS } component = { Teachers } />
+      <Route exact path = { ROUTES.USER_PROFILE } component = { UserProfile } />
     </Switch>
   </Fragment>
 )
