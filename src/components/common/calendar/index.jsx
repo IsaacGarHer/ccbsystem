@@ -9,9 +9,9 @@ export default props => (
     <div
       className = 'calendar-header' >
       <SubtitleTwo
-        text = { props.month } />
+        text = { props.month ? props.month : null } />
       <SubtitleTwo
-        text = { props.year } />
+        text = { props.year ? props.year : null } />
     </div>
     <div className = 'calendar-main' >
       <div
@@ -43,7 +43,8 @@ export default props => (
             style = {{
               height : `calc(100% / ${( props.startWDay >= 5 && props.days.length >= 31 ) || ( props.startWDay >= 6 && props.days.length >= 30 ) ? '6' : props.startWDay == '0' && props.days.lenght == 28 ? '4' : '5' } - ${ props.thisDay[0] == day && props.thisDay[1] == props.month && props.thisDay[2] == props.year ? '8px' : '4px' })`,
               borderTop : props.thisDay[0] == day && props.thisDay[1] == props.month && props.thisDay[2] == props.year ? '5px solid #ab2121' : '1px solid #707070ab'
-            }} >{ day }</span>
+            }}
+            onClick = { ( ) => props.clickDay ? props.clickDay( day, props.month, props.year ) : null }>{ day }</span>
           ))
           :
           null }
