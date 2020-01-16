@@ -66,6 +66,12 @@ class AddStudentPreview extends Component {
     }
   }
 
+  checkWorkshops = i => {
+    let { workshops } = this.state
+    workshops[i].active = !workshops[i].active
+    this.setState({ workshops })
+  }
+
   checkMonth = i => this.setState( st => {
     let pays = Object.assign({}, st.pays)
     pays.month[i].active = !pays.month[i].active
@@ -89,6 +95,8 @@ class AddStudentPreview extends Component {
   changeTutor = value => this.setState({ tutor: value })
 
   viewMonths = ( ) => this.setState( st => ({ view_months: !st.view_months }))
+
+  viewWorkshops = ( ) => this.setState( st => ({ view_workshops: !st.view_workshops }))
 
   render( ){
     const st = this.state
@@ -141,7 +149,8 @@ class AddStudentPreview extends Component {
               text = 'Ver Meses'
               click = { this.viewMonths }/>
             <RedGhostButton
-              text = 'Ver Talleres'/>
+              text = 'Ver Talleres'
+              click = { this.viewWorkshops }/>
           </div>
           <MainButton
             text = 'Guardar'/>
@@ -196,6 +205,23 @@ class AddStudentPreview extends Component {
                   }) }/>
               )) }
             </div>
+          </div>
+        </div>
+        <div
+          className = { `workshops ${ st.view_workshops ? 'active' : 'hide' }`}>
+          <img
+            className = 'close-workshops'
+            src = { cross }
+            alt = 'cerrar'
+            onClick = { this.viewWorkshops }/>
+          <div
+            className = 'view'>
+            { st.workshops ?
+              <CheckBox
+                options = { st.workshops }
+                check = { this.checkWorkshops }/>
+              :
+              null }
           </div>
         </div>
       </div>
