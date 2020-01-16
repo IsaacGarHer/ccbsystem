@@ -9,5 +9,5 @@ export default props => (
     name = { props.id ? props.id : null }
     id = { props.id ? props.id : null }
     value = { props.value ? props.value : null }
-    onChange = { ( e ) => props.functionChange( e ) ? props.functionChange( e ) : null } />
+    onChange = { e => props.functionChange ? props.functionChange( e.target.value ) : null } />
 )

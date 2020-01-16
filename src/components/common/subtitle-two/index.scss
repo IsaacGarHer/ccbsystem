@@ -3,6 +3,5 @@
 .subtitle-two{
   font-size: 1.4em;
   font-weight: 400;
-  border-bottom: 2px solid $black;
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 3px), 50% calc(100% - 3px), 50% 100%, 0 100%);
+  border-bottom: 1px solid $black;
 }

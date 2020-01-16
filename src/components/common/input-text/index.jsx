@@ -9,5 +9,5 @@ export default props => (
     name = { props.name ? props.name : null }
     className = 'input-text'
     id = { props.id ? props.id : null }
-    onChange = { ( e ) => props.functionChange( e ) ? props.functionChange( e ) : null } />
+    onChange = { e => props.functionChange ? props.functionChange( e.target.value ) : null } />
 )

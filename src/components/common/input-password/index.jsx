@@ -13,7 +13,7 @@ export default props => (
       id = { props.id ? props.id : null }
       value = { props.value ? props.value : null }
       placeholder = { props.placeholder ? props.placeholder : '' }
-      onChange = { ( e ) => props.functionChange( e ) ? props.functionChange( e ) : null } />
+      onChange = { e => props.functionChange ? props.functionChange( e.target.value ) : null } />
     <img
       src = { props.seexPassword ? notVisiblePassword : visiblePassword }
       alt = { props.seePassword ? 'Ocultar' : 'Ver' }
