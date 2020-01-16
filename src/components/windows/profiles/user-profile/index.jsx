@@ -8,10 +8,10 @@ import { notify } from '../../../common/notification/'
 import SideBar from '../../../common/sidebar/'
 import InputText from '../../../common/input-text/'
 import InputPassword from '../../../common/input-password/'
-import InputNumber from '../../../common/input-number/'
 import SubtitleTwo from '../../../common/subtitle-two/'
 import MainButton from '../../../common/main-button/'
 import RadioButtons from '../../../common/radio-buttons'
+import AddStudent from '../../../pop-panels/add-student'
 
 class UserProfilePreview extends Component {
   constructor( props ) {
@@ -40,90 +40,7 @@ class UserProfilePreview extends Component {
           text: 'Observación',
           active: false
         }
-      ],
-      new_student: {
-        id: null,
-        name: null,
-        tutor: null,
-        eightteen: false,
-        home: null,
-        phone: null,
-        workshops: [ ],
-        pays:[
-          {
-            month: 0,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 1,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 2,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 3,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 4,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 5,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 6,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 7,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 8,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 9,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 10,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          },
-          {
-            month: 11,
-            pay: false,
-            quantity: 0,
-            no_recepit: 0
-          }
-        ]
-      }
+      ]
     }
   }
 
@@ -146,34 +63,6 @@ class UserProfilePreview extends Component {
       e.active = index === i ? true : false
     })
     this.setState({ work, elements })
-  }
-
-  returnWorks = ( ) => {
-    let { work } = this.state
-    return work === 'student' ?
-      <div
-        className = 'student'>
-        <InputText
-          placeholder = 'número de control'/>
-        <InputText
-          placeholder = 'nombre del alumon'/>
-        <InputNumber
-          placeholder = 'numero de talleres'/>
-      </div>
-      :
-      work === 'event' ?
-      <div
-        className = 'event'>
-
-      </div>
-      :
-      work === 'observation' ?
-      <div
-        className = 'observation'>
-
-      </div>
-      :
-      null
   }
 
   render( ){
@@ -209,7 +98,10 @@ class UserProfilePreview extends Component {
             <RadioButtons
               elements = { st.elements }
               changeOption = { this.changeOption }/>
-            { this.returnWorks( ) }
+            { st.work === 'student' ?
+              <AddStudent />
+              :
+              null }
           </div>
         </div>
       </div>
