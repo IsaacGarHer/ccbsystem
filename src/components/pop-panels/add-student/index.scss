@@ -1,0 +1,122 @@
+@import '../../../global/variables.scss';
+
+.add-student{
+  width: 60vw;
+  padding: 5vh 5vw;
+  box-shadow: 5px 5px 10px #0009;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  .first{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .second{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .months{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+    &.active{
+      visibility: visible;
+      opacity: 1;
+    }
+    &.hide{
+      visibility: hidden;
+      opacity: 0;
+    }
+    .close-months{
+      position: absolute;
+      width: 90px;
+      height: 20px;
+      padding: 5px 0;
+      right: 25vw;
+      bottom: 90vh; 
+      background-color: $primary;
+    }
+    .view {
+      position: absolute;
+      top: 10vh;
+      left: 25vw;
+      background-color: $white;
+      width: 40vw;
+      padding: 5vh 5vw;
+      height: 70vh;
+      z-index: 10;
+      overflow-x: hidden;
+      overflow-y: visible;
+      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, calc(100% / 3));
+      grid-template-rows: 7vh 90vh;
+      &::-webkit-scrollbar{
+        width: 10px;
+        background-color: $white;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: $gray;
+        border-right: 1px solid $white;
+      }
+      .header-months{
+        grid-column: 1/4;
+        grid-row: 1;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, calc(100% / 3));
+        grid-template-rows: 1fr;
+      }
+      .month{
+        width: 100%;
+        grid-column: 1;
+        grid-row: 2;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 5vh;
+        .check-box-group{
+          height: inherit;
+          justify-content: space-between;
+        }
+      }
+      .quantity, .receipt{
+        width: 30%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 5vh;
+        .input-number{
+          width: 10vw; 
+        }
+      }
+      .quantity{
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .receipt{
+        grid-column: 3;
+        grid-row: 2;
+      }
+    }
+  }
+}

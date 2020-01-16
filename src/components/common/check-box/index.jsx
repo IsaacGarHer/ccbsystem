@@ -10,7 +10,7 @@ export default props => (
           onClick = { ( ) => props.check( index ) } >
           <div
             className = { `input-check ${ option.active ? 'this-active' : 'didnt-active' }` }
-            id = { option.id } />
+            id = { option.id ? option.id : null } />
           <span
             className = { `check-text ${option.active ? 'text-active' : 'text-dont-active' }` } >{ option.text }</span>
         </div>

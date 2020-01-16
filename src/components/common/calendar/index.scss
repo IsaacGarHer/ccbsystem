@@ -13,6 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .subtitle-two {
+      border: none;
+    }
   }
   .calendar-main {
     display: flex;

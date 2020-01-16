@@ -7,6 +7,7 @@
   border-style: solid;
   font-size: 1.2em;
   background: transparent;
+  text-align: right;
   &::placeholder{
     color: $gray;
   }
