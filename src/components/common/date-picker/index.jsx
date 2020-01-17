@@ -3,38 +3,80 @@ import './index.scss'
 
 import Calendar from '../calendar'
 
-//const daysWeek = [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Sabado' ]
-//const hours = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
-//const minutes = [ 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 ]
+import right from '../../../resources/icons/right.svg'
+import left from '../../../resources/icons/left.svg'
+import cross from '../../../resources/icons/cross.svg'
+import bottomArrow from '../../../resources/icons/bottom-arrow.svg'
 
 export default props => (
   <div
     className = 'date-picker'>
     { props.dayweek ?
       <div
-        className = 'days-week-picker'>
+        className = 'select-day-week'>
+        <span
+          className = 'see-day-week'>{ props.daySelect ? props.daySelect : 'Lunes' }</span>
         { props.daysWeek ?
-          props.daysWeek.map(( d, i ) => (
-            <span
-              className = 'day-week'
-              onClick = { ( ) => props.clickDay ? props.clickDay( i ) : null }>{ d }</span>
-          ))
+          <div
+            className = { `days-week-picker ${ props.seeDayPicker ? 'visible' : 'hide' }` }>
+            <div
+              className = 'week-header'>
+              <img
+                className = 'close-week'
+                src = { cross }
+                alt = 'cerrar'
+                onClick = { props.chSeeWeek ? props.chSeeWeek( ) : null }/>
+            </div>
+            { props.daysWeek.map(( d, i ) => (
+              <span
+                className = 'day-week'
+                onClick = { ( ) => props.clickDay ? props.clickDay( i ) : null }>{ d }</span>
+            ))}
+          </div>
           :
           null }
       </div>
       :
       props.daymonth ?
       <div
-        className = 'calendar-container'>
-        <Calendar
-          month = { props.month ? props.month : null }
-          year = { props.year ? props.year : null }
-          daysW = { props.daysWeek ? props.daysWeek : null }
-          startWDay = { props.daysWeek ? props.daysWeek : null }
-          lastWDay = { props.daysWeek ? props.daysWeek : null }
-          days = { props.days ? props.days : null }
-          thisDay = { props.thisDay ? props.thisDay : null }
-          clickDay = { props.clickDay ? props.clickDay : null } />
+        className = 'select-day-month'>
+        <span
+          className = 'see-day-month'>{ props.thisDay ?
+          `${ props.thisDay.map( element => (
+            `${ element }`
+          )) }`
+          :
+          '01 Enero 2020' }</span>
+        <div
+          className = { `calendar-container ${ props.seeCalendar ? 'visible' : 'hide' }` }>
+          <div
+            className = 'calendar-header'>
+            <img
+              className = 'calendar-control'
+              src = { left }
+              alt = 'anterior'
+              onClick = { props.changeCalendar ? props.changeCalendar( -1 ) : null }/>
+            <img
+              className = 'calendar-control'
+              src = { right }
+              alt = 'siguiente'
+              onClick = { props.changeCalendar ? props.changeCalendar( 1 ) : null }/>
+            <img
+              className = 'close-calendar'
+              src = { cross }
+              alt = 'cerrar'
+              onClick = { props.chSeeCalendar ? props.chSeeCalendar( ) : null }/>
+          </div>
+          <Calendar
+            month = { props.month ? props.month : null }
+            year = { props.year ? props.year : null }
+            daysW = { props.daysWeek ? props.daysWeek : null }
+            startWDay = { props.daysWeek ? props.daysWeek : null }
+            lastWDay = { props.daysWeek ? props.daysWeek : null }
+            days = { props.days ? props.days : null }
+            thisDay = { props.thisDay ? props.thisDay : null }
+            clickDay = { props.clickDay ? props.clickDay : null } />
+        </div>
       </div>
       :
       props.time ?
@@ -44,6 +86,11 @@ export default props => (
           className = 'select-hour'>
           <span
             className = 'see-hour'>{ props.hourSelect ? props.hourSelect : 0 }</span>
+          <img
+            className = { `open ${ props.seehour ? 'top' : 'bottom' }` }
+            src = { bottomArrow }
+            alt = { props.seehour ? 'cerrar' : 'abrir' }
+            onClick = { props.chSeeHour ? props.chSeeHour( ) : null }/>
           { props.hours ?
             <div
               className = { `hours-container ${ props.seehour ? 'visible' : 'hide' }` }>
@@ -59,6 +106,11 @@ export default props => (
           className = 'select-minute'>
           <span
             className = 'see-minute'>{ props.minuteSelect ? props.minuteSelect : 0 }</span>
+          <img
+            className = { `open ${ props.seeMinutes ? 'top' : 'bottom' }` }
+            src = { bottomArrow }
+            alt = { props.seeMinutes ? 'cerrar' : 'abrir' }
+            onClick = { props.chSeeMinutes ? props.chSeeMinutes( ) : null }/>
           { props.minutes ?
             <div
               className = { `minutes-container ${ props.seeMinutes ? 'visible' : 'hide' }` }>
@@ -74,6 +126,11 @@ export default props => (
           className = 'select-time'>
           <span
             className = 'see-time'>{ props.timeSelect ? props.timeSelect : 'AM' }</span>
+          <img
+            className = { `open ${ props.seeTime ? 'top' : 'bottom' }` }
+            src = { bottomArrow }
+            alt = { props.seeTime ? 'cerrar' : 'abrir' }
+            onClick = { props.chSeeTime ? props.chSeeTime( ) : null }/>
           { props.time ?
             <div
               className = { `time-container ${ props.seeTime ? 'visible' : 'hide'  }` }>

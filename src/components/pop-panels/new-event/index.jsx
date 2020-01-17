@@ -9,6 +9,7 @@ import CheckBox from '../../common/check-box'
 import TextArea from '../../common/text-area'
 import MainButton from '../../common/main-button'
 import RedGhostButton from '../../common/red-ghost-button'
+import DatePicker from '../../common/date-picker'
 
 import cross from '../../../resources/icons/cross.svg'
 
@@ -42,6 +43,9 @@ class NewEventPreview extends Component {
 
   render( ){
     const st = this.state
+    const daysWeek = [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Sabado' ]
+    const hours = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+    const minutes = [ 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 ]
     return(
       <div
         className = 'new-event'>
