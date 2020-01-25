@@ -118,9 +118,9 @@ class LoginPreview extends Component {
 
   changeVisibility = ( ) => this.setState(( state ) => ({ seePassword: !state.seePassword }))
 
-  changeEmail = e => this.setState({ email: e.target.value })
+  changeEmail = value => this.setState({ email: value })
 
-  changePassword = e => this.setState({ password: e.target.value })
+  changePassword = value => this.setState({ password: value })
 
   render( ) {
     const st = this.state

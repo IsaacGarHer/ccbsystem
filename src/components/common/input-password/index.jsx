@@ -15,9 +15,9 @@ export default props => (
       placeholder = { props.placeholder ? props.placeholder : '' }
       onChange = { e => props.functionChange ? props.functionChange( e.target.value ) : null } />
     <img
-      src = { props.seexPassword ? notVisiblePassword : visiblePassword }
+      src = { props.seePassword ? notVisiblePassword : visiblePassword }
       alt = { props.seePassword ? 'Ocultar' : 'Ver' }
-      onClick = { ( ) => props.changeVisibility ? props.changeVisibility : null }
+      onClick = { ( ) => props.changeVisibility ? props.changeVisibility( ) : null }
       className = 'eye' />
   </div>
 )

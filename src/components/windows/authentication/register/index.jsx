@@ -49,13 +49,13 @@ class RegisterPreview extends Component {
 
   changeVisibility = ( ) => this.setState( st => ({ seePassword: !st.seePassword }))
 
-  changeUserName = e => this.setState({ user_name: e.target.value })
+  changeUserName = value => this.setState({ user_name: value })
 
-  changeEMail = e => this.setState({ email: e.target.value })
+  changeEMail = value => this.setState({ email: value })
 
-  changePassword = e => this.setState({ password: e.target.value })
+  changePassword = value => this.setState({ password: value })
 
-  changeVCode = e => this.setState({ verifyCode: e.target.value })
+  changeVCode = value => this.setState({ verifyCode: value })
 
   onImageChange = event => {
     if ( event.target.files && event.target.files[0] ){

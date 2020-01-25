@@ -104,7 +104,7 @@ export default class Header extends Component {
             component = {
               <GhostButton
                 text = { st.path === ROUTES.LOGIN ? 'Registrate' : st.path === ROUTES.REGISTER ? 'Inicia Sesión' : 'Home' }
-                function = { ( ) => this.changePath( st.path === ROUTES.LOGIN ? ROUTES.REGISTER : st.path === ROUTES.REGISTER ? ROUTES.LOGIN : ROUTES.HOME ) }/>
+                click = { ( ) => this.changePath( st.path === ROUTES.LOGIN ? ROUTES.REGISTER : st.path === ROUTES.REGISTER ? ROUTES.LOGIN : ROUTES.HOME ) }/>
             }/>
         </div>
       </div>
