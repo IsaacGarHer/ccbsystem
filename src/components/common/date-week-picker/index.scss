@@ -1,0 +1,67 @@
+@import '../../../global/variables.scss';
+
+.date-week-picker{
+  width: 10vw;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $gray;
+  position: relative;
+  .see-day-week{
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 100%;
+  }
+  .days-week-picker{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transition: 0.3s ease-in-out;
+    &.visible{
+      visibility: visible;
+      opacity: 1;
+    }
+    &.hide{
+      visibility: hidden;
+      opacity: 0;
+    }
+    .week-header{
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      .close-week{
+        height: 12px;
+        width: 35px;
+        padding: 5px 0;
+        background-color: $primary;
+      }
+    }
+    .days-container{
+      display: flex;
+      height: calc(3vw + 4px);
+      width: 50vw;
+      border-color: $black;
+      border-width: 2px 0 2px 2px;
+      border-style: solid;
+      background-color: $white;
+      z-index: 3;
+      .day-week{
+        width: calc(50vw / 7 - 4px);
+        height: calc(100% - 2px);
+        border-right: 2px solid $black;
+        transition: 0.2s ease-in-out;
+        padding: 2px 0 0 2px;
+        &:hover{
+          background-color: $primary;
+          color: $white
+        }
+      }
+    }
+  }
+}

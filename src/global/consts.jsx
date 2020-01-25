@@ -1,0 +1,5 @@
+export const MONTHS = [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ]
+export const DAYS_WEEK = [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ]
+export const HOURS = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+export const MINUTES = [ 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 ]
+export const TIMES = [ 'AM', 'PM' ]

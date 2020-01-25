@@ -1,0 +1,74 @@
+@import '../../../global/variables.scss';
+
+.hour-select{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 30vw;
+  height: 30px;
+  .hour, .minute, .time{
+    width: 7vw;
+    height: 30px;
+    border-bottom: 1px solid $black;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3vw;
+    .select{
+      font-size: 1em;
+    }
+    .img-see{
+      height: 25px;
+      transition: 0.2s;
+      &.visible{
+        transform: rotate(180deg);
+      }
+      &.hide{
+        transform: rotate(0deg);
+      }
+    }
+    .hours-container, .minutes-container, .times-container{
+      position: absolute;
+      max-height: 120px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      top: 105%;
+      left: 0;
+      width: 100%;
+      border: 1px solid $black;
+      transition: 0.2s ease-in-out;
+      background-color: $white;
+      &.visible{
+        visibility: visible;
+        opacity: 1;
+      }
+      &.hide{
+        visibility: hidden;
+        opacity: 0;
+      }
+      &::-webkit-scrollbar{
+        width: 10px;
+        background-color: $white;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: $gray;
+        border-right: 1px solid $white;
+      }
+      .hour-option, .minute-option, .time-option{
+        width: 90%;
+        padding-right: 10%;
+        min-height: 30px;
+        text-align: right;
+        transition: 0.2s;
+        &:hover{
+          background-color: $gray;
+        }
+      }
+    }
+  }
+}
