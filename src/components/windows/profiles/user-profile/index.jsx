@@ -35,11 +35,6 @@ class UserProfilePreview extends Component {
           id: 'event',
           text: 'Evento',
           active: false
-        },
-        {
-          id: 'observation',
-          text: 'Observación',
-          active: false
         }
       ]
     }

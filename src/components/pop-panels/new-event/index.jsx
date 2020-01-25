@@ -156,46 +156,58 @@ class NewEventPreview extends Component {
     return(
       <div
         className = 'new-event'>
-        <InputText
-          placeholder = 'Nombre'
-          value = { st.name }
-          functionChange = { this.changeName }/>
-        <InputText
-          placeholder = 'Nombre'
-          value = { st.name }
-          functionChange = { this.changePlace }/>
-        <TextArea
-          placeholder = 'Descripcion'
-          value = { st.description }
-          change = { this.changeDescription }/>
-        <DateMonthPicker
-          seeCalendar = { st.month.seeCalendar }
-          thisDay = { st.month.thisDay }
-          month = {  st.month.mth }
-          year = { st.month.year }
-          daysW = { CONSTS.DAYS_WEEK }
-          startWDay = { st.month.startWDay }
-          lastWDay = { st.month.lastWDay }
-          days = { st.month.days }
-          changeCalendar = { this.changeCalendar }
-          chSeeCalendar = { this.chSeeCalendar }
-          clickDay = { this.print } />
-        <HourPicker 
-          select_hour = { st.thisDate.hour }
-          select_minute = { st.thisDate.minute }
-          select_time = { st.thisDate.time }
-          see_hour = { st.time.visible[0] }
-          see_minute = { st.time.visible[1] }
-          see_time = { st.time.visible[2] }
-          chgSee = { this.chgSee }
-          click_h = { this.click_h }
-          click_m = { this.click_m }
-          click_t = { this.click_t } />
-        <RedGhostButton
-          text = 'Ver Talleres'
-          click = { this.viewWorkshops } />
-        <MainButton
-          text = 'Guardar' />
+        <div
+          className = 'one'>
+          <InputText
+            placeholder = 'Nombre'
+            value = { st.name }
+            functionChange = { this.changeName }/>
+          <InputText
+            placeholder = 'Lugar'
+            value = { st.place }
+            functionChange = { this.changePlace }/>
+        </div>
+        <div
+          className = 'two'>
+          <TextArea
+            placeholder = 'Descripcion'
+            value = { st.description }
+            change = { this.changeDescription }/>
+        </div>
+        <div
+          className = 'three'>
+          <DateMonthPicker
+            seeCalendar = { st.month.seeCalendar }
+            thisDay = { st.month.thisDay }
+            month = {  st.month.mth }
+            year = { st.month.year }
+            daysW = { CONSTS.DAYS_WEEK }
+            startWDay = { st.month.startWDay }
+            lastWDay = { st.month.lastWDay }
+            days = { st.month.days }
+            changeCalendar = { this.changeCalendar }
+            chSeeCalendar = { this.chSeeCalendar }
+            clickDay = { this.print } />
+          <HourPicker 
+            select_hour = { st.thisDate.hour }
+            select_minute = { st.thisDate.minute }
+            select_time = { st.thisDate.time }
+            see_hour = { st.time.visible[0] }
+            see_minute = { st.time.visible[1] }
+            see_time = { st.time.visible[2] }
+            chgSee = { this.chgSee }
+            click_h = { this.click_h }
+            click_m = { this.click_m }
+            click_t = { this.click_t } />
+        </div>
+        <div
+          className = 'four'>
+          <RedGhostButton
+            text = 'Ver Talleres'
+            click = { this.viewWorkshops } />
+          <MainButton
+            text = 'Guardar' />
+        </div>
         <div
           className = { `workshops ${ st.view_workshops ? 'active' : 'hide' }`}>
           <img
