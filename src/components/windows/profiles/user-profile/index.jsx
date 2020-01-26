@@ -24,6 +24,7 @@ class UserProfilePreview extends Component {
         email: ls.get('user_email') ? ls.get('user_email') : 'SN',
         password: ls.get('user_password') ? ls.get('user_password') : 'SN'
       },
+      seePassword: false,
       work: 'student',
       elements: [
         {
@@ -61,6 +62,8 @@ class UserProfilePreview extends Component {
     this.setState({ work, elements })
   }
 
+  chgSeePassword = ( ) => this.setState( st => ({ seePassword: !st.seePassword }))
+
   render( ){
     const st = this.state
     return(
@@ -83,7 +86,9 @@ class UserProfilePreview extends Component {
             <InputPassword
               placeholder = { 'Contraseña' }
               value = { st.user.password }
-              functionChange = { this.changePass }/>
+              functionChange = { this.changePass }
+              seePassword = { st.seePassword }
+              changeVisibility = { this.chgSeePassword }/>
             <MainButton
               text = { 'Cambiar' }/>
           </div>
