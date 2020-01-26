@@ -11,6 +11,7 @@ import Events from './components/windows/events/'
 import Students from './components/windows/students/'
 import Teachers from './components/windows/teachers/'
 import UserProfile from './components/windows/profiles/user-profile/'
+import Assistance from './components/windows/assistance/'
 
 import NotFound from './components/not-found/'
 
@@ -25,6 +26,7 @@ export default ( ) => (
       <Route exact path = { ROUTES.STUDENTS } component = { Students } />
       <Route exact path = { ROUTES.TEACHERS } component = { Teachers } />
       <Route exact path = { ROUTES.USER_PROFILE } component = { UserProfile } />
+      <Route exact path = { ROUTES.ATTENDANCE } component = { Assistance } />
       <Route component = { NotFound }/>
     </Switch>
   </Fragment>
