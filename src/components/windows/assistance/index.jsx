@@ -11,139 +11,14 @@ import Select from '../../common/select'
 class AssistancePreview extends Component {
   state = {
     active: {
-      workshop: 'Ballet',
-      teacher: 'Flor Amargo'
+      workshop: '',
+      teacher: ''
     },
-    students: [
-      {
-        name: 'Garcia Hernandez Isaac',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      },
-      {
-        name: 'gilberto',
-        come_in: false
-      },
-      {
-        name: 'barenka',
-        come_in: false
-      }
-    ],
+    students: [ ],
     showWorkshops: false,
     day_week: 0,
-    all_workshops: [
-      {
-        id: 'ballet',
-        text: 'Ballet'
-      },
-      {
-        id: 'guitar',
-        text: 'Guitarra'
-      }
-    ],
-    all_tecahers: [
-      'Flor Amargo',
-      'Pitch'
-    ]
+    all_workshops: [ ],
+    all_tecahers: [ ]
   }
 
   componentDidMount = ( ) => this.setState({ day_week: new Date( ).getDay( ) })
