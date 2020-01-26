@@ -8,6 +8,7 @@
   position: relative;
   width: fit-content;
   z-index: 10000;
+  border-bottom: 1px solid $gray;
   .text-of-selection{
     width: 15vw;
     font-size: 1.2em;

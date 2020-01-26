@@ -11,8 +11,8 @@ import Select from '../../common/select'
 class AssistancePreview extends Component {
   state = {
     active: {
-      workshop: '',
-      teacher: ''
+      workshop: 'Ballet',
+      teacher: 'Flor Amargo'
     },
     students: [
       {
@@ -24,9 +24,22 @@ class AssistancePreview extends Component {
         come_in: false
       }
     ],
+    showWorkshops: false,
     day_week: 0,
-    all_workshops: [ ],
-    all_tecahers: [ ]
+    all_workshops: [
+      {
+        id: 'ballet',
+        text: 'Ballet'
+      },
+      {
+        id: 'guitar',
+        text: 'Guitarra'
+      }
+    ],
+    all_tecahers: [
+      'Flor Amargo',
+      'Pitch'
+    ]
   }
 
   componentDidMount = ( ) => this.setState({ day_week: new Date( ).getDay( ) })
@@ -37,17 +50,40 @@ class AssistancePreview extends Component {
     this.setState({ students })
   }
 
+  chgShowWorkshops = ( ) => this.setState( st => ({ showWorkshops: !st.showWorkshops }))
+
+  chgSelect = t => {
+    let { all_workshops, active } = this.state
+
+    active.workshop = t
+
+    for( let i = 0; i < all_workshops.length; i++ ) {
+      if( all_workshops[i].text === t ){
+        active.teacher = this.state.all_tecahers[i]
+        break
+      }
+    }
+
+    this.chgShowWorkshops( )
+
+    this.setState({ all_workshops, active })
+  }
+
   render = ( st = this.state ) => (
     <div
       className = 'assistance'>
       <div
-        className = 'assistace-header'>
-        <SubtitleOne
-          text = { st.active.workshop }/>
+        className = 'assistance-header'>
+        <Select
+          select = { st.active.workshop }
+          showList = { st.showWorkshops }
+          options = { st.all_workshops }
+          changeShow = { this.chgShowWorkshops }
+          changeSelection = { this.chgSelect }/>
         <SubtitleOne
           text = { CONSTS.DAYS_WEEK[ st.day_week ] }/>
         <SubtitleOne
-          text = { st.active.teacher }/>
+          text = { `Profesor: ${ st.active.teacher }` }/>
       </div>
       <div
         className = 'assistance-body'>
