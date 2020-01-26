@@ -16,6 +16,110 @@ class AssistancePreview extends Component {
     },
     students: [
       {
+        name: 'Garcia Hernandez Isaac',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
+        name: 'gilberto',
+        come_in: false
+      },
+      {
+        name: 'barenka',
+        come_in: false
+      },
+      {
         name: 'gilberto',
         come_in: false
       },
